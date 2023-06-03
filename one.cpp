@@ -55,10 +55,11 @@ inline void Copy_Sampel_and_Clean_Solution(std::vector <T> &solu,std::vector<T> 
             
             
 }
+
+
 template <class T>
 inline void Mutation( std::vector<T> &sample,int num_w,int  keep_best,float rate )
 {
-            // mutation
             std::uniform_real_distribution<float> m(1.0 - rate ,1.0+rate);
                 std::for_each(sample.begin()+ keep_best,sample.end(),[&](auto& s){
                     for(int i =0; i<num_w;i++)
@@ -66,6 +67,8 @@ inline void Mutation( std::vector<T> &sample,int num_w,int  keep_best,float rate
                 });
 
 }
+
+
 template <class T>
 inline void Crossover(std::vector <T> &solu,int num_w,int NUM,std::vector<T> &sample,int  keep_best )
 {
